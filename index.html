@@ -4,38 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSX Help</title>
+    <style>
+        /* Import Sofia Pro font */
+        @font-face {
+            font-family: 'Sofia Pro';
+            src: url('https://fonts.gstatic.com/s/sofiapro/sofiapro-regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Sofia Pro', sans-serif;
+            background-color: #8002D1; /* GSX Purple */
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0.5em 0;
+        }
+
+        img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 600px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to GSX Help</h1>
-    <p>Use the chat widget below to get in touch with us!</p>
+    <!-- Logo -->
+    <img src="GSX_logo_gold_purple.png" alt="GSX Logo">
 
-    <!-- Widget Configuration -->
-    <script>
-      window.zESettings = {
-        webWidget: {
-          color: {
-            theme: '#0057A3' // Change this to match your branding
-          }
-        }
-      };
-    </script>
+    <!-- Heading -->
+    <h1>Welcome to GSX Help</h1>
+
+    <!-- Content -->
+    <div class="content">
+        <p>Use the chat widget below to get in touch with us!</p>
+    </div>
 
     <!-- Zendesk Widget -->
     <script id="ze-snippet"
         src="https://static.zdassets.com/ekr/snippet.js?key=bc993fc9-6fec-458a-ad68-f9a6a65cd6a0">
     </script>
-
-    <!-- Debugging -->
-    <script>
-      setTimeout(() => {
-        if (typeof zE === 'function') {
-          console.log('Zendesk Widget successfully loaded');
-          zE('webWidget', 'open'); // Optionally open the widget on load
-        } else {
-          console.error('Zendesk Widget failed to load.');
-        }
-      }, 3000);
-    </script>
 </body>
 </html>
-
