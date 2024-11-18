@@ -9,16 +9,25 @@
     <h1>Welcome to GSX Help</h1>
     <p>Use the chat widget below to get in touch with us!</p>
 
-    <!-- Embed Zendesk Messaging SDK -->
+    <!-- Embed Zendesk Messaging Web SDK -->
     <script>
-        // Decode and embed the SDK settings URL
-        const sdkSettingsUrl = atob("eyJzZXR0aW5nc191cmwiOiJodHRwczovL2dzeGhlbHAuemVuZGVzay5jb20vbW9iaWxlX3Nka19hcGkvc2V0dGluZ3MvMDFKRDA0NDk4VEJER1hISzEwUTJEUFNTRVEuanNvbiJ9");
-        const parsedSettings = JSON.parse(sdkSettingsUrl);
-        
-        const script = document.createElement('script');
-        script.src = parsedSettings.settings_url;
-        script.async = true;
-        document.body.appendChild(script);
+        (function() {
+            // Decode and parse your SDK key into the settings URL
+            const sdkKey = "eyJzZXR0aW5nc191cmwiOiJodHRwczovL2dzeGhlbHAuemVuZGVzay5jb20vbW9iaWxlX3Nka19hcGkvc2V0dGluZ3MvMDFKRDA1VlJFUUFDWFc3UVlQSlpDVjdNQ0YuanNvbiJ9";
+            const sdkSettings = JSON.parse(atob(sdkKey));
+            const settingsURL = sdkSettings.settings_url;
+
+            // Dynamically load the Zendesk Web SDK script
+            const script = document.createElement('script');
+            script.src = settingsURL;
+            script.async = true;
+            document.body.appendChild(script);
+
+            // Optional: Log to console when the script is loaded
+            script.onload = function() {
+                console.log("Zendesk widget loaded successfully!");
+            };
+        })();
     </script>
 </body>
 </html>
