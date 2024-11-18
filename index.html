@@ -3,31 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to GSX Help</title>
+    <title>GSX Help</title>
 </head>
 <body>
     <h1>Welcome to GSX Help</h1>
     <p>Use the chat widget below to get in touch with us!</p>
 
-    <!-- Embed Zendesk Messaging Web SDK -->
-    <script>
-        (function() {
-            // Decode and parse your SDK key into the settings URL
-            const sdkKey = "eyJzZXR0aW5nc191cmwiOiJodHRwczovL2dzeGhlbHAuemVuZGVzay5jb20vbW9iaWxlX3Nka19hcGkvc2V0dGluZ3MvMDFKRDA1VlJFUUFDWFc3UVlQSlpDVjdNQ0YuanNvbiJ9";
-            const sdkSettings = JSON.parse(atob(sdkKey));
-            const settingsURL = sdkSettings.settings_url;
-
-            // Dynamically load the Zendesk Web SDK script
-            const script = document.createElement('script');
-            script.src = settingsURL;
-            script.async = true;
-            document.body.appendChild(script);
-
-            // Optional: Log to console when the script is loaded
-            script.onload = function() {
-                console.log("Zendesk widget loaded successfully!");
-            };
-        })();
+    <!-- Start of gsxhelp Zendesk Widget script -->
+    <script id="ze-snippet"
+        src="https://static.zdassets.com/ekr/snippet.js?key=bc993fc9-6fec-458a-ad68-f9a6a65cd6a0">
     </script>
+    <!-- End of gsxhelp Zendesk Widget script -->
+
 </body>
 </html>
+
