@@ -9,12 +9,24 @@
     <h1>Welcome to GSX Help</h1>
     <p>Use the chat widget below to get in touch with us!</p>
 
-    <!-- Start of gsxhelp Zendesk Widget script -->
+    <!-- Start of Zendesk Widget -->
     <script id="ze-snippet"
         src="https://static.zdassets.com/ekr/snippet.js?key=bc993fc9-6fec-458a-ad68-f9a6a65cd6a0">
     </script>
-    <!-- End of gsxhelp Zendesk Widget script -->
+    <!-- End of Zendesk Widget -->
 
+    <script>
+        // Debugging the Web SDK loading
+        setTimeout(() => {
+            if (typeof zE === "function") {
+                console.log("Zendesk Widget loaded successfully!");
+                // Optionally open the widget on load
+                zE('webWidget', 'open');
+            } else {
+                console.error("Zendesk Widget failed to load. Please check the console logs for more details.");
+            }
+        }, 3000);
+    </script>
 </body>
 </html>
 
