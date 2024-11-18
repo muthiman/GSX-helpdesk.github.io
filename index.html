@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSX Help</title>
+    <title>Welcome to GSX Help</title>
 </head>
 <body>
     <h1>Welcome to GSX Help</h1>
@@ -11,12 +11,12 @@
 
     <!-- Embed Zendesk Messaging SDK -->
     <script>
-        // SDK link you provided
-        const zendeskSettingsURL = "https://gsxhelp.zendesk.com/mobile_sdk_api/settings/01JD04498TBDGXHK10Q2DPSSQE.json";
-
-        // Dynamically load the Zendesk Messaging SDK
+        // Decode and embed the SDK settings URL
+        const sdkSettingsUrl = atob("eyJzZXR0aW5nc191cmwiOiJodHRwczovL2dzeGhlbHAuemVuZGVzay5jb20vbW9iaWxlX3Nka19hcGkvc2V0dGluZ3MvMDFKRDA0NDk4VEJER1hISzEwUTJEUFNTRVEuanNvbiJ9");
+        const parsedSettings = JSON.parse(sdkSettingsUrl);
+        
         const script = document.createElement('script');
-        script.src = zendeskSettingsURL;
+        script.src = parsedSettings.settings_url;
         script.async = true;
         document.body.appendChild(script);
     </script>
